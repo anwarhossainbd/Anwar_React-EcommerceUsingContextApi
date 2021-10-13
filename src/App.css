@@ -17,13 +17,11 @@
   --lightDark:#222;
 }
 
-
 html {
   box-sizing: border-box;
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
-
 
 body{
   font-size: 1.6rem;
@@ -61,10 +59,11 @@ img {
   width: 100%;
   padding:1.6rem 8rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: #e7f3ff;
   align-items: center;
   position: fixed;
   top: 0;
-
+  z-index: 999;
 }
 
 .navbar{
@@ -80,11 +79,9 @@ img {
   color: var(--mainColor);
 }
 
-
 .nav-item{
   padding: 0 1rem;
 }
-
 
 .shoppingCart{
   padding-right: 0.7rem;
@@ -100,25 +97,39 @@ img {
   border-radius: 50px;
   background: var(--mainColor);
   color: white;
+}
 
+/*Banner Image*/
+
+.bannerImg{
+  background-image: url("./assets/Images/Banner.jpg");
+  width: 100%;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: -1;
+  margin-top: 6rem;
+  position: relative;
+
+}
+
+.BannerOverlay{
+  background: rgba(0,0,0,.3);
+  width: 100%;
+  height: 100%;
+  position: absolute;
 
 }
 
 
-/*.count{*/
-/*  display: inline-block;*/
-/*  font-size: 14px;*/
-/*  color: white;*/
-/*  height: 30px;*/
-/*  width: 30px;*/
-/*  line-height: 30px;*/
-/*  text-align: center;*/
-/*  align-items: center;*/
-/*  background: #f57224;*/
-/*  border-radius: 50%;*/
-/*}*/
-
-
+.BannerText{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 
 
 
