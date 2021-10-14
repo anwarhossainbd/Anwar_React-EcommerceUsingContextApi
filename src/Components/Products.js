@@ -1,11 +1,15 @@
-import React, {useContext} from 'react';
+import React, {Fragment, useContext} from 'react';
 import {ProductsContext} from "../Global/ProductsContext";
+import Watch2 from "../assets/Images/watchTwo.jpg";
+import Banner from "./Banner";
 
 const Products = () => {
     const {products} =useContext(ProductsContext) ;
 
 
     return (
+        <Fragment>
+            <Banner />
            <div className="products container">
                {products.map(products=>(
                    <div className="product" key={products.id}>
@@ -17,12 +21,23 @@ const Products = () => {
                                {products.name}
                            </div>
                            <div className="product-price">
-                               {products.price}
+                               ${products.price}
                            </div>
+
+                           <div className="add-to-cart">
+                              Add to Cart
+                           </div>
+
+                           {products.status==="Hot"?<div className="hot">Hot</div>:""}
+                           {products.status==="New"?<div className="new">New</div>:""}
                        </div>
                    </div>
-               ))}
+
+
+
+                   ))}
            </div>
+        </Fragment>
     );
 };
 
