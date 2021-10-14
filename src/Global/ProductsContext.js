@@ -10,7 +10,7 @@ import Watch2 from "../assets/Images/watchTwo.jpg" ;
 
 export const ProductsContext = createContext();
 
-const ProductsContextProvider = () => {
+const ProductsContextProvider = (props) => {
 
     const [products]=useState([
         {id:1, name:"Apple Laptop", price:"200500", image:APPleLaptop,status:"Hot"},
@@ -26,10 +26,23 @@ const ProductsContextProvider = () => {
 
 
     return (
-        <div>
+        <ProductsContext.Provider value={{products:[...products]}}>
+            {props.children}
+        </ProductsContext.Provider>
 
-        </div>
     );
 };
 
 export default ProductsContextProvider;
+
+
+
+
+
+
+
+
+
+
+
+

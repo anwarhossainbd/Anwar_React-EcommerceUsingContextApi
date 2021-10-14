@@ -148,6 +148,27 @@ img {
 }
 
 
+/*Product Styles*/
+
+.container{
+  margin-top: 8rem;
+  padding: 3rem 8rem;
+}
+
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+
+}
+
+.product{
+  width: 25%;
+  padding: 0 12px;
+  margin: 20px 0;
+  overflow: hidden;
+}
 
 
 
