@@ -1,4 +1,7 @@
+
+
 export const CartReducer=(state,action )=>{
+
 
     const {shoppingCart,totalPrice,qty}=state ;
 
@@ -12,7 +15,7 @@ export const CartReducer=(state,action )=>{
             const check = shoppingCart.find(pro=> pro.id=== action.id) ;
 
             if (check){
-                alert("This is already added")
+                alert("this Product already added")
                 return state
             } else {
                product = action.products ;

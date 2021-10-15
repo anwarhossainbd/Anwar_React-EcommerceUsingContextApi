@@ -241,9 +241,27 @@ img {
 }
 
 
+.noImage{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 50%;
+  height: 60%;
+}
 
+.NoImageTitle{
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%);
+  text-transform: uppercase;
+  color: deeppink;
+  font-size: 28px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
 
-
+}
 
 
 
