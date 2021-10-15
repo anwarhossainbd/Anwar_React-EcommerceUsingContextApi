@@ -4,6 +4,7 @@ import './App.css';
 import Products from "./Components/Products";
 import Cart from "./Components/Cart";
 import NotFound from "./Components/NotFound";
+import CartContextProvider from "./Global/CartContext";
 
 import {
     BrowserRouter as Router,
@@ -17,6 +18,7 @@ function App() {
     <div>
 
         <ProductsContextProvider>
+            <CartContextProvider>
             <Router>
                 <Navbar />
 
@@ -27,6 +29,7 @@ function App() {
                 </Switch>
 
             </Router>
+            </CartContextProvider>
         </ProductsContextProvider>
 
     </div>

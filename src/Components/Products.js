@@ -1,10 +1,11 @@
 import React, {Fragment, useContext} from 'react';
 import {ProductsContext} from "../Global/ProductsContext";
-import Watch2 from "../assets/Images/watchTwo.jpg";
+import {CartContext} from "../Global/CartContext";
 import Banner from "./Banner";
 
 const Products = () => {
     const {products} =useContext(ProductsContext) ;
+    const {dispatch} =useContext(CartContext)
 
 
     return (
@@ -24,7 +25,7 @@ const Products = () => {
                                ${products.price}
                            </div>
 
-                           <div className="add-to-cart">
+                           <div className="add-to-cart" onClick={()=>dispatch({type:"ADD_TO_CART", id:products.id,products  })}>
                               Add to Cart
                            </div>
 
