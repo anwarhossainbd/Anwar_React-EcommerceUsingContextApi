@@ -6,6 +6,7 @@ export const CartReducer=(state,action )=>{
     const {shoppingCart,totalPrice,qty}=state ;
 
     let product ;
+    let index ;
     let updatePrice ;
     let updateQty ;
 
@@ -27,6 +28,16 @@ export const CartReducer=(state,action )=>{
                }
             }
             break ;
+
+        case "INC":
+            product = action.cart ;
+            product.qty = product.qty+1 ;
+            updatePrice = totalPrice +product.price;
+            updateQty = qty +1 ;
+            index =shoppingCart.findIndex(cart=>cart.id ===action.id);
+            shoppingCart[index] = product ;
+            return {shoppingCart: [...shoppingCart],totalPrice:updatePrice , qty:updateQty }
+
 
         default: return state ;
     }

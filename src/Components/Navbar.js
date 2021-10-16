@@ -1,7 +1,10 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useContext} from 'react';
 import {Link} from "react-router-dom";
+import {CartContext} from "../Global/CartContext";
+
 
 const Navbar = () => {
+    const {qty}=useContext(CartContext)
     return (
         <Fragment>
             <nav className="nav" id="nav">
@@ -14,7 +17,7 @@ const Navbar = () => {
 
                         <li className="nav-item">
                             <Link to="/cart" className="nav-link">
-                                <span className="shoppingCart"><i className="fas fa-cart-plus"></i> </span> <span className="count">0</span> </Link>
+                                <span className="shoppingCart"><i className="fas fa-cart-plus"></i> </span> <span className="count">{qty}</span> </Link>
                         </li>
 
 
