@@ -38,6 +38,33 @@ export const CartReducer=(state,action )=>{
             shoppingCart[index] = product ;
             return {shoppingCart: [...shoppingCart],totalPrice:updatePrice , qty:updateQty }
 
+        break ;
+
+        case "DEC":
+            product = action.cart ;
+            if (product.qty>1){
+                product.qty = product.qty-1
+                updatePrice = totalPrice -product.price;
+                updateQty = qty -1 ;
+                index =shoppingCart.findIndex(cart=>cart.id ===action.id);
+                shoppingCart[index] = product ;
+                return {shoppingCart: [...shoppingCart],totalPrice:updatePrice , qty:updateQty }
+
+            }
+
+            else {
+                return  state
+            }
+
+            break ;
+
+        case "DELETE":
+            const filtered = shoppingCart.filter(product=>product.id !==action.id)
+            product = action.cart ;
+            updatePrice =totalPrice-product.price*product.qty;
+            updateQty =qty -product.qty
+            return {shoppingCart: [...filtered],totalPrice:updatePrice , qty:updateQty}
+            break;
 
         default: return state ;
     }
