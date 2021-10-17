@@ -1,9 +1,13 @@
 import React, {useContext} from 'react'
 import {CartContext} from "../Global/CartContext";
 import NoImage from "../assets/Images/noImg.png"
+import StripeCheckout from "react-stripe-checkout";
 
 const Cart = () => {
     const {shoppingCart,totalPrice,qty,dispatch} =useContext(CartContext)
+    const handleToken =(token)=>{
+
+    }
 
     return (
         <div className="cart-container">
@@ -40,7 +44,16 @@ const Cart = () => {
                         <div className="items-price"> ${totalPrice}.00</div>
                     </div>
                     <div className="stripe-section">
+                        <StripeCheckout
+                            stripeKey="pk_test_51Jgto9SHO5t3rrNYYdOXIdScpGSRdEpZcnqeqj3y1CaI8I3DTfoN6qOy8nWizdPSW3dloOn05BmIkJ1c1NT1Wd4X00Sd3aN3IP"
+                            token={handleToken}
+                            billingAddress
+                            shippingAddress
+                            amount={totalPrice*100}
+                            name="All Products"
+                        >
 
+                        </StripeCheckout>
                     </div>
                 </div>
             </div> :""}
