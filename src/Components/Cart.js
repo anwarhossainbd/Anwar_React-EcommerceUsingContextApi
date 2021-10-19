@@ -2,11 +2,18 @@ import React, {useContext} from 'react'
 import {CartContext} from "../Global/CartContext";
 import NoImage from "../assets/Images/noImg.png"
 import StripeCheckout from "react-stripe-checkout";
+import axios from "axios";
 
 const Cart = () => {
     const {shoppingCart,totalPrice,qty,dispatch} =useContext(CartContext)
-    const handleToken =(token)=>{
-        console.log(token)
+    const handleToken =async (token)=>{
+
+        const product ={name:"All Products",price:totalPrice}
+        const response = await axios.post("http://localhost:8080/checkout",{
+            product,
+            token
+        })
+        console.log(response);
     }
 
     return (
