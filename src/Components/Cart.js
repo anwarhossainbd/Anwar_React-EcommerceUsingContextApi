@@ -6,7 +6,7 @@ import StripeCheckout from "react-stripe-checkout";
 const Cart = () => {
     const {shoppingCart,totalPrice,qty,dispatch} =useContext(CartContext)
     const handleToken =(token)=>{
-
+        console.log(token)
     }
 
     return (
