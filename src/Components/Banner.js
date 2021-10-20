@@ -5,10 +5,12 @@ const Banner = () => {
         <Fragment>
             <div className="bannerImg">
                 <div className="BannerOverlay">
-                    <div className="BannerText">
-                        <h1>Bangla Express Ecommerse</h1>
-                        <p>Enjoy Online Shopping with BD express</p>
-                    </div>
+                   <div className="fullBanner">
+                       <div className="BannerText">
+                           <h1>Bangla Express Ecommerse</h1>
+                           <p>Enjoy Online Shopping with BD express</p>
+                       </div>
+                   </div>
 
                 </div>
             </div>
